@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  let title = 'Skincare 0.1'
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {title}
         </a>
       </header>
     </div>
