@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import React, { useState } from 'react';
 import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
+import ItemList from './components/ItemList';
 
 
 
@@ -11,9 +11,11 @@ const item = {nombre:"acido hialuronico"}
   return (
     <>
       <NavBar/>
-      <ItemListContainer>Bienvenido a tu página</ItemListContainer>
-      <ItemCount item={item} stock={5} onAdd={(cantidad) => {setCarrito({cantidad: cantidad, item:item})}}></ItemCount>
+      <ItemListContainer>Bienvenido a tu página
+        <ItemList onAdd={(cantidad) => {setCarrito({cantidad: cantidad, item:item})}}/>
+      </ItemListContainer>
    </>
+   
      );
 }
 

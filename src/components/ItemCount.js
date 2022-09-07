@@ -1,47 +1,6 @@
 import { Button, styled, Typography } from "@mui/material";
 import React, { useState } from "react";
 
-let pieles = {
-  seca: {
-    productos: [
-      {
-        nombre: "Face Oil",
-        precio: "USD $25",
-      },
-      {
-        nombre: "Natural Oil",
-        precio: "USD $30",
-      },
-    ],
-  },
-
-  mixta: {
-    productos: [
-      {
-        nombre: "Fixed Textured",
-        precio: "USD $50",
-      },
-      {
-        nombre: "Face Gel",
-        precio: "USD $42",
-      },
-    ],
-  },
-
-  grasa: {
-    productos: [
-      {
-        nombre: "Killing Oil",
-        precio: "USD $30",
-      },
-      {
-        nombre: "Oil cleaner",
-        precio: "USD $48",
-      },
-    ],
-  },
-};
-
 const ItemCount = ({item, stock, onAdd}) => {
   const [n, setN] = useState(0)
 
@@ -54,7 +13,6 @@ const ItemCount = ({item, stock, onAdd}) => {
 
   return (
     <ItemCountContainer>
-    <ItemTitle>{item.nombre}</ItemTitle>
     <ItemCountAlign>
       <StyleButton disabled = {n <= 0} onClick={decrecer}> - </StyleButton>
       <ItemTitle>{n}</ItemTitle>
@@ -68,10 +26,11 @@ const ItemCount = ({item, stock, onAdd}) => {
 const ItemTitle = styled(Typography)`
     display: block;
     text-align:center;
-    font-size: 2rem;
+    font-size: 1rem;
     color: white;
     margin-bottom: 1.5rem;
-    font-weight: 100;
+    font-weight: 50px;
+    max-width: 30%
 `
 const StyleButton = styled(Button)`
     text-align:center;
@@ -84,10 +43,10 @@ const StyleButton = styled(Button)`
 const ItemCountContainer = styled("div")`
     display: block;
     text-align:center;
-    margin: 2rem auto;
-    padding: 50px;
+    margin: 1rem auto;
+    padding: 30px;
     background: #FFCEC2;
-    width: 20rem;
+    width: 19rem;
     border-radius: 6rem;
 
 `
@@ -95,7 +54,7 @@ const ItemCountAlign = styled("div")`
     display: flex;
     text-align:center;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content:space-around;
 
 `
 const AddingButton = styled(Button)`
