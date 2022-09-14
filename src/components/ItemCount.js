@@ -1,7 +1,7 @@
 import { Button, styled, Typography } from "@mui/material";
 import React, { useState } from "react";
 
-const ItemCount = ({item, stock, onAdd}) => {
+const ItemCount = ({ stock, onAdd}) => {
   const [n, setN] = useState(0)
 
   function decrecer() {

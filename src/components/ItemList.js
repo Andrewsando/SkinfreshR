@@ -58,7 +58,7 @@ function ItemList({ onAdd }) {
     ];
     setTimeout(() => {
       myResolve(pieles);
-    }, "2000");
+    }, "500");
   })
 
   useEffect(() => {

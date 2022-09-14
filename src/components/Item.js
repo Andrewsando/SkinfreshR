@@ -8,7 +8,7 @@ const Item = ({item, onAdd}) => {
     <ImageSection>
       <img src={item.imagen} alt="imgskin"></img>
       <Typography>{item.nombre}</Typography>
-      <ItemCount item={item} stock={item.stock} onAdd={onAdd}></ItemCount>
+      <ItemCount  stock={item.stock} onAdd={onAdd}></ItemCount>
     </ImageSection>
   );
 };
