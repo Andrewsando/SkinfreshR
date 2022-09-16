@@ -2,11 +2,12 @@ import { Typography } from "@mui/material";
 import React from "react";
 import ItemCount from "./ItemCount";
 import { styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Item = ({item, onAdd}) => {
   return (
     <ImageSection>
-      <img src={item.imagen} alt="imgskin"></img>
+      <Link to={"/item/" + item.id}> <img src={item.imagen} alt="imgskin"></img></Link>
       <Typography>{item.nombre}</Typography>
       <ItemCount  stock={item.stock} onAdd={onAdd}></ItemCount>
     </ImageSection>

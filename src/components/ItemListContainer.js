@@ -1,10 +1,23 @@
 import { styled } from "@mui/material/styles";
+import ItemList from "./ItemList";
 
-const ItemListContainer = styled("div")(({ theme }) => ({
+const Container = styled("div")(({ theme }) => ({
   ...theme.typography.button,
   padding: theme.spacing(1),
   backgroundColor: "white",
-  textAlign: "center", 
+  textAlign: "center",
 }));
+
+const ItemListContainer = ({addCarrito}) => {
+  return (
+    <Container>
+      <ItemList
+        onAdd={(item, cantidad) => {
+          addCarrito({ item, cantidad });
+        }}
+      />
+    </Container>
+  );
+};
 
 export default ItemListContainer;

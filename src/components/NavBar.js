@@ -1,38 +1,58 @@
-import { AppBar, Button, styled, Typography } from "@mui/material"
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
+import { AppBar, Button, styled, Typography } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
+import Container from "@mui/material/Container";
 import React from "react";
 import CartWidget from "./CartWidget";
+import { NavLink } from "react-router-dom";
 
-const pages = ['Tienda', 'nosotros', 'Blog'];
-const title = 'SkinFresh'
+const title = "SkinFresh";
 
 const NavBar = () => {
   return (
-    <AppBar sx={{backgroundColor: 'rgb(33,37,41)'}} position="static">
+    <AppBar sx={{ backgroundColor: "rgb(33,37,41)" }} position="static">
       <StyledContainer maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography sx={{
-            fontFamily: 'Merriweather, serif',
-            fontSize: '30px',
-            marginRight: '15px'
-          }}>{title}</Typography>
-          {pages.map((page) => (
-            <Button color="inherit" key={page} textAlign="center">{page}</Button>
-          ))} 
+          <Typography
+            sx={{
+              fontFamily: "Merriweather, serif",
+              fontSize: "30px",
+              marginRight: "15px",
+            }}
+          >
+            <Link to={"/"}>{title}</Link>
+          </Typography>
+          <Link to={"/category/seca"}>
+            <Button color="inherit" textAlign="center">
+              piel seca
+            </Button>
+          </Link>
+          <Link to={"/category/mixta"}>
+            <Button color="inherit" textAlign="center">
+              piel mixta
+            </Button>
+          </Link>
+          <Link to={"/category/grasa"}>
+            <Button color="inherit" textAlign="center">
+              piel grasa
+            </Button>
+          </Link>
         </Toolbar>
-        <CartWidget/>
+        <CartWidget />
       </StyledContainer>
     </AppBar>
-  )
-
-}
-export default NavBar
+  );
+};
+export default NavBar;
 
 const StyledContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   svg {
-    margin: auto 0
+    margin: auto 0;
   }
-`
+`;
+
+const Link = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+`;
