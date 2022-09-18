@@ -1,4 +1,6 @@
 import { styled } from "@mui/material/styles";
+import { useContext } from "react";
+import { CarritoContext } from "./CartContext";
 import ItemList from "./ItemList";
 
 const Container = styled("div")(({ theme }) => ({
@@ -8,12 +10,13 @@ const Container = styled("div")(({ theme }) => ({
   textAlign: "center",
 }));
 
-const ItemListContainer = ({addCarrito}) => {
+const ItemListContainer = ({}) => {
+  const {addItem} = useContext (CarritoContext)
   return (
     <Container>
       <ItemList
         onAdd={(item, cantidad) => {
-          addCarrito({ item, cantidad });
+          addItem( item, cantidad );
         }}
       />
     </Container>
