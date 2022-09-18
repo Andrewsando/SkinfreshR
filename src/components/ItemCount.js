@@ -18,7 +18,7 @@ const ItemCount = ({ stock, onAdd}) => {
       <ItemTitle>{n}</ItemTitle>
       <StyleButton disabled = { n === stock } onClick={crecer}> + </StyleButton>
     </ItemCountAlign>
-      <AddingButton disabled = { stock === 0 } onClick={onAdd(n)}>Agregar al carrito</AddingButton>
+      <AddingButton disabled = { stock === 0 } onClick={() => onAdd(n)}>Agregar al carrito</AddingButton>
     </ItemCountContainer>
   );
 };
