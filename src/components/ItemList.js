@@ -21,16 +21,22 @@ function ItemList({ onAdd }) {
   useEffect(() => {
     const getProductos = async () => {
       const prods = await productosPromise(id);
-        setProductos(prods);
+      setProductos(prods);
     };
     getProductos();
   }, [id]);
 
-  const list = productos.map((item) => (
-    <Item item={item} onAdd={(cant) => onAdd(item, cant)} key={item.id}></Item>
-  ));
-
-  return <ContentSection>{list}</ContentSection>;
+  return (
+    <ContentSection>
+      {productos.map((item) => (
+        <Item
+          item={item}
+          onAdd={(cant) => onAdd(item, cant)}
+          key={item.id}
+        ></Item>
+      ))}
+    </ContentSection>
+  );
 }
 
 const ContentSection = styled("ul")`

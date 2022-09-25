@@ -6,9 +6,12 @@ import { CarritoContext } from "./CartContext";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({ item }) {
-  const [numero, setNumero] = useState(0);
   const {addItem, productos} = useContext(CarritoContext)
-
+  const [agregados, setAgregados] = useState(false)
+  const onAdd = (n) => {
+    addItem(item, n)
+    setAgregados(true)
+  }
   return (
     <ItemDetailDiv>
       {console.log(productos)}
@@ -20,11 +23,10 @@ function ItemDetail({ item }) {
       <Typography variant="caption">
         {item.stock > 0 ? "Disponible" : "Agotado"}
       </Typography>
-      {console.log(numero)}
-      {numero === 0 ? (
-        <ItemCount onAdd={(n) => addItem(item, n)} stock={item.stock} />
+      {!agregados ? ( 
+        <ItemCount onAdd={onAdd} stock={item.stock} />
       ) : (
-        <Link to={"/Cart"}>Terminar mi compra</Link> 
+        <Link to={"/cart"}>Terminar mi compra</Link> 
       )}
     </ItemDetailDiv>
   );

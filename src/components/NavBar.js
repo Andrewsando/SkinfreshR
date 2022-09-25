@@ -36,6 +36,16 @@ const NavBar = () => {
               piel grasa
             </Button>
           </Link>
+          <Link to={"/login"}>
+            <Button color ="inherit" textAlign="center">
+            login
+            </Button>
+          </Link>
+          <Link to={"/cart"}>
+            <Button color ="inherit" textAlign="center">
+            Carrito
+            </Button>
+          </Link>
         </Toolbar>
         <CartWidget />
       </StyledContainer>

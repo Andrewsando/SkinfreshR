@@ -20,7 +20,7 @@ function CarritoContextProvider({ children }) {
     }
   };
 
-  const removeItem = (item) => {
+  const removeItem = (item) => {console.log(removeItem)
     setProductos([...productos.filter((p) => p.item.id !== item.id)]);
   };
 
