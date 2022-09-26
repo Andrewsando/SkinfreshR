@@ -22,27 +22,27 @@ const NavBar = () => {
             <Link to={"/"}>{title}</Link>
           </Typography>
           <Link to={"/category/seca"}>
-            <Button color="inherit" textAlign="center">
+            <Button color="inherit">
               piel seca
             </Button>
           </Link>
           <Link to={"/category/mixta"}>
-            <Button color="inherit" textAlign="center">
+            <Button color="inherit">
               piel mixta
             </Button>
           </Link>
           <Link to={"/category/grasa"}>
-            <Button color="inherit" textAlign="center">
+            <Button color="inherit">
               piel grasa
             </Button>
           </Link>
           <Link to={"/login"}>
-            <Button color ="inherit" textAlign="center">
+            <Button color ="inherit">
             login
             </Button>
           </Link>
           <Link to={"/cart"}>
-            <Button color ="inherit" textAlign="center">
+            <Button color ="inherit">
             Carrito
             </Button>
           </Link>

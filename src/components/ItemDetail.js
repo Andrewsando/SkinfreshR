@@ -1,12 +1,12 @@
 import { Divider, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContext } from "./CartContext";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({ item }) {
-  const {addItem, productos} = useContext(CarritoContext)
+  const {addItem} = useContext(CarritoContext)
   const [agregados, setAgregados] = useState(false)
   const onAdd = (n) => {
     addItem(item, n)
@@ -14,7 +14,6 @@ function ItemDetail({ item }) {
   }
   return (
     <ItemDetailDiv>
-      {console.log(productos)}
       <img src={item.imagen} alt="imgskin"></img>
       <Typography variant="h4">{item.nombre}</Typography>
       <Divider />

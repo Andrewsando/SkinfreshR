@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { pieles } from "../data/productos";
+import { getItems, getItemsByCondition } from "../api";
 import Item from "./Item";
 
 function ItemList({ onAdd }) {
@@ -9,13 +9,7 @@ function ItemList({ onAdd }) {
   const { id } = useParams();
 
   const productosPromise = (categoryId) => {
-    return new Promise((myResolve, myReject) => {
-      setTimeout(() => {
-        myResolve(
-          categoryId ? pieles.filter((p) => p.categoria === categoryId) : pieles
-        );
-      }, "500");
-    });
+    return categoryId ? getItemsByCondition(categoryId): getItems()
   };
 
   useEffect(() => {
@@ -23,6 +17,7 @@ function ItemList({ onAdd }) {
       const prods = await productosPromise(id);
       setProductos(prods);
     };
+    console.log(id)
     getProductos();
   }, [id]);
 
