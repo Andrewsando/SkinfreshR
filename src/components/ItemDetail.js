@@ -25,7 +25,7 @@ function ItemDetail({ item }) {
       {!agregados ? (
         <ItemCount onAdd={onAdd} stock={item.stock} />
       ) : (
-        <Button sx={{margin: "auto"}}>
+        <Button sx={{ margin: "auto" }}>
           <Link to={"/cart"}>Terminar mi compra</Link>
         </Button>
       )}

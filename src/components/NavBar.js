@@ -28,7 +28,7 @@ const NavBar = () => {
           </Link>
           <Link to={"/category/mixta"}>
             <Button color="inherit">
-              piel mixta
+              piel mixta      
             </Button>
           </Link>
           <Link to={"/category/grasa"}>

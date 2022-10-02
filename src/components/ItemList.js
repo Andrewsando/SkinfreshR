@@ -9,7 +9,7 @@ function ItemList({ onAdd }) {
   const { id } = useParams();
 
   const productosPromise = (categoryId) => {
-    return categoryId ? getItemsByCondition(categoryId): getItems()
+    return categoryId ? getItemsByCondition(categoryId) : getItems();
   };
 
   useEffect(() => {

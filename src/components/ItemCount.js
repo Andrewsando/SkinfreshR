@@ -47,7 +47,7 @@ const StyleButton = styled(Button)`
   font-weight: bold;
 
   &.Mui-disabled {
-    background-color: rgba(33, 37, 41, 0.2) ;
+    background-color: rgba(33, 37, 41, 0.2);
   }
 `;
 const ItemCountContainer = styled("div")`

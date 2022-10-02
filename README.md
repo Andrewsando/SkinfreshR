@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## Skinfresh
+Página proyecto principal html
+Proyecto con la intención de ser una página web de venta de productos dermocosméticos, su funcionalidad se basa en el uso de distintas páginas de navegación las cuanles se encuentran en la barra de navegación y se encuentran enlazadas por links, de las que se desprenden los diferentes productos por categoría de tipo de piel, su funcionalidad base está en simular la venta del producto usando el carrito de venta, el cual se desarrolla en una pantalla inicial donde aparecen los productos, al darle click al producto lo lleva al detalle (valor), en ésta se puede elegir la cantidad que se desea adquirir y se redireccona por medio de un botón a la sección de finalizar compra, en esta ya se piden datos de usuario para gestionar el pedido.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para el desarrollo de la simulación anterior se crearon diferentes componentes que ejemplifican una funcionalidad especifica, estos se compilan en un componente que está encargado de renderizar (App.js)
 
-## Available Scripts
+## Configurar proyecto
 
-In the project directory, you can run:
+ID del repositorio del proyecto:
 
-### `npm start`
+```
+https://github.com/Andrewsando/skinfresh
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se deben instalar las dependencias
+```
+npm i
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para correr el programa
 
-### `npm test`
+```
+npm run start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Database
 
-### `npm run build`
+La base de datos donde se registra la información de los productos es Firebase
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+https://console.firebase.google.com/project/skinfresh-ce366/overview?hl=es-419
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Se registran bajo colección los nuevos productos y el registro de las compras que se van haciendo (obteniendo información del producto que compran (categoría, id, imagen, nombre, precio) y la información del cliente (email, nombre, telefono y fecha de compra)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para acceder a la base de datos se deben configurar las siguientes variables de entorno de Firebase
 
-### `npm run eject`
+```
+REACT_APP_PROJECT_ID 
+REACT_APP_API_KEY
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Librería
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+También se usó la librería MUI que contiene componentes customizados que se pueden editar
+```
+https://mui.com/
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dudas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Cualquier duda de la funcionalidad del programa me pueden escribir al correo
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+andres.torressandoval@hotmail.com
+```

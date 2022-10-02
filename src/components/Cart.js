@@ -45,8 +45,7 @@ function Cart() {
                   <CardActions>
                     <Button
                       onClick={() => removeItem(producto.item)}
-                      size="small"
-                    >
+                      size="small">
                       Eliminar de carrito
                     </Button>
                   </CardActions>

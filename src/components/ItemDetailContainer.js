@@ -4,9 +4,8 @@ import { getItemById } from "../api";
 import ItemDetail from "./ItemDetail";
 
 const itemPromise = (itemId) => {
-  return getItemById(itemId)
-  };
-
+  return getItemById(itemId);
+};
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
