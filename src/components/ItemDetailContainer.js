@@ -1,8 +1,6 @@
-import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getItemById } from "../api";
-import { pieles } from "../data/productos";
 import ItemDetail from "./ItemDetail";
 
 const itemPromise = (itemId) => {
@@ -17,11 +15,10 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     itemPromise(id).then((itemDetail) => {
       setItem(itemDetail);
-      console.log(itemDetail)
     });
   }, [id]);
 
-  return <Box>{item && <ItemDetail item={item} />}</Box>;
+  return <>{item && <ItemDetail item={item} />}</>;
 };
 
 export default ItemDetailContainer;

@@ -1,10 +1,16 @@
-import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, setDoc, where } from "firebase/firestore";
+import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, where } from "firebase/firestore";
 import { db } from './firebase';
 
 // CREATE
 export const createItem = async(obj) => {
-    const colRef = collection(db, 'productos');
+    const colRef = collection(db, 'infoCompra');
     const data = await addDoc(colRef, obj);
+    
+    //Actualizar Stocks
+    Promise.all(obj.items.map(p => 
+        updateItem(p.item.id,{stock:p.item.stock-p.cantidad})
+    ))
+
     return data.id;
 }
 

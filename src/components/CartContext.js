@@ -34,9 +34,13 @@ function CarritoContextProvider({ children }) {
     return !!pExistente;
   };
 
+  const getTotal = () => {
+    return productos && productos.reduce((a, s) => a + s.cantidad * s.item.valor, 0)
+};
+
   return (
     <CarritoContext.Provider
-      value={{ productos, addItem, removeItem, clear, isInCart }}
+      value={{ productos, addItem, removeItem, clear, isInCart, getTotal }}
     >
       {children}
     </CarritoContext.Provider>

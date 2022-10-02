@@ -10,7 +10,7 @@ const Container = styled("div")(({ theme }) => ({
   textAlign: "center",
 }));
 
-const ItemListContainer = ({}) => {
+const ItemListContainer = () => {
   const {addItem} = useContext (CarritoContext)
   return (
     <Container>

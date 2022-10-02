@@ -17,7 +17,6 @@ function ItemList({ onAdd }) {
       const prods = await productosPromise(id);
       setProductos(prods);
     };
-    console.log(id)
     getProductos();
   }, [id]);
 
@@ -36,13 +35,14 @@ function ItemList({ onAdd }) {
 
 const ContentSection = styled("ul")`
   display: flex;
-  text-align: center;
   font-size: 2rem;
   color: "rgb(33,37,41)";
   font-weight: 100;
   height: 80px;
+  padding: 0 80px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-content: flex-start;
+  justify-content: space-between;
 `;
 
 export default ItemList;
